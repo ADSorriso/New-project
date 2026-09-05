@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iranir Moraes | Psicanálise e Acolhimento</title>
-    <!-- Fontes elegantes com pesos adicionais -->
+    <!-- Fontes elegantes com pesos adicionais (400, 500, 600) para dar corpo e presença -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Estilos Globais e Base */
@@ -19,6 +19,7 @@
             background-color: #F5EDE3;
             color: #2F241E;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Header Desktop */
@@ -30,7 +31,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 3rem;
             background-color: #F5EDE3;
             z-index: 100;
             border-bottom: 1px solid #D8C5B5;
@@ -40,7 +41,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
             letter-spacing: 2px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #2F241E;
         }
 
@@ -57,8 +58,12 @@
             transition: color 0.3s;
         }
 
+        .nav-menu a:hover {
+            color: #A96242;
+        }
+
         .btn-nav {
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border: 1px solid #A96242;
             border-radius: 4px;
             color: #A96242 !important;
@@ -69,7 +74,7 @@
             display: none;
             background: none;
             border: none;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             cursor: pointer;
             color: #2F241E;
         }
@@ -102,7 +107,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Espaçamento mais enxuto para caber perfeitamente na tela do celular */
+            gap: 22px; 
             text-align: center;
             width: 100%;
             padding: 1.5rem;
@@ -110,19 +115,24 @@
 
         .close-menu {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 2rem;
+            right: 2rem;
             background: none;
             border: none;
             color: #F5EDE3;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             cursor: pointer;
             opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .close-menu:hover {
+            opacity: 1;
         }
 
         .mobile-link {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px; /* Tamanho proporcional que não estica demais a tela */
+            font-size: 28px;
             font-weight: 500;
             color: #F5EDE3;
             text-decoration: none;
@@ -134,15 +144,15 @@
         }
 
         .mobile-instagram {
-            font-size: 20px; /* Discreto e elegante */
+            font-size: 20px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 400;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         .mobile-contato-link {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #A96242 !important;
             margin-top: 10px;
@@ -150,81 +160,198 @@
             text-transform: uppercase;
         }
 
-        /* Seções da Página */
-        section {
-            padding: 5rem 1.5rem 3rem 1.5rem;
+        /* Estrutura de Conteúdo Geral */
+        .content-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
         }
 
+        section {
+            padding: 6rem 2rem;
+        }
+
+        /* Bloco 1: HERO */
         .hero-section {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-top: 7rem;
+            padding-top: 8rem;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .organic-frame-photo img {
+            width: 100%;
+            max-width: 380px;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 200px 200px 20px 20px;
         }
 
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.3rem;
+            font-size: 3.5rem;
             line-height: 1.15;
             color: #2F241E;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             font-weight: 600;
         }
 
         .hero-desc {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: #554840;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
 
         .badge-emocional {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #A96242;
             border: 1px solid #D8C5B5;
-            padding: 0.3rem 0.7rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 20px;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .btn-primary {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             background-color: #A96242;
             color: #F5EDE3;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Bloco 2: Identificação */
+        .section-bloco-dois {
+            text-align: center;
+            background-color: #FBF8F3;
+        }
+
+        .narrativa-passo {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #A96242;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-bloco-dois h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: #2F241E;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .narrativa-sub {
+            font-size: 1.1rem;
+            color: #554840;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Bloco 4 e 5: Sobre e Espaço (Grid) */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .sobre-texto h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #2F241E;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .sobre-texto p {
+            color: #554840;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .sobre-foto-minima img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
         }
 
         /* Botão Flutuante do WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
+            bottom: 2rem;
+            right: 2rem;
             background-color: #25D366;
             color: #FFF;
-            width: 54px;
-            height: 54px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             z-index: 99;
+            transition: transform 0.3s;
         }
 
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsividade para telas menores */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
             .menu-toggle {
                 display: block;
+            }
+            .hero-container, .sobre-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            .section-bloco-dois h2 {
+                font-size: 2.2rem;
+            }
+            .sobre-texto h2 {
+                font-size: 2rem;
+            }
+            .site-header {
+                padding: 1.2rem 1.5rem;
             }
         }
     </style>
@@ -253,7 +380,7 @@
         </button>
     </header>
 
-    <!-- Menu Lateral Mobile Ajustado -->
+    <!-- Menu Lateral Mobile Refinado -->
     <div class="mobile-menu-overlay" id="mobileMenu">
         <button class="close-menu" id="closeMenu" aria-label="Fechar menu">✕</button>
         <div class="mobile-menu-content">
@@ -269,6 +396,12 @@
     <!-- Bloco 1: HERO -->
     <section class="hero-section" id="home">
         <div class="hero-container">
+            <div class="hero-image-container">
+                <div class="organic-frame-photo">
+                    <img src="perfil.png" alt="Iranir Moraes - Psicanalista" style="object-position: 70% 25%;">
+                </div>
+            </div>
+
             <div class="hero-content-box">
                 <span class="badge-emocional">Espaço de Escuta</span>
                 <h1 class="hero-title">Um espaço para<br>você se escutar.</h1>
@@ -277,6 +410,119 @@
                     <a href="https://wa.me/556697241646?text=Olá,%20Iranir!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos." target="_blank" class="btn-primary">[ Agendar uma conversa ]</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Bloco 2: IDENTIFICAÇÃO EMOCIONAL -->
+    <section class="section-bloco-dois">
+        <div class="content-wrapper">
+            <p class="narrativa-passo">VOCÊ CHEGOU ATÉ AQUI.</p>
+            <h2>Talvez esteja procurando respostas.</h2>
+            <p class="narrativa-sub">Ou talvez só precise de um espaço onde possa falar sem precisar fingir que está tudo bem.</p>
+        </div>
+    </section>
+
+    <!-- Bloco 3: O PROCESSO (Com fundo bege claro #F5EDE3 e cards em branco quente #FBF8F3) -->
+    <section class="section-bloco-tres" id="servicos" style="background-color: #F5EDE3; color: #2F241E;">
+        <div class="content-wrapper">
+            <span class="badge-emocional" style="color: #A96242; border-color: #D8C5B5; font-weight: 600;">O PROCESSO</span>
+            <h2 style="color: #2F241E; margin-bottom: 2.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600;">Aqui, você pode se escutar.</h2>
+            
+            <div class="cards-stack" style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <!-- Card 01 -->
+                <div class="card-item" style="background: #FBF8F3; border: 1px solid #D8C5B5; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(47, 36, 30, 0.03);">
+                    <span class="card-number" style="color: #A96242; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">01</span>
+                    <h3 style="color: #2F241E; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Cormorant Garamond', serif;">ESCUTA</h3>
+                    <p style="color: #554840; font-weight: 400; line-height: 1.6; font-size: 0.95rem;">Um tempo dedicado exclusivamente a você e ao que habita seus pensamentos.</p>
+                </div>
+                <!-- Card 02 -->
+                <div class="card-item" style="background: #FBF8F3; border: 1px solid #D8C5B5; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(47, 36, 30, 0.03);">
+                    <span class="card-number" style="color: #A96242; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">02</span>
+                    <h3 style="color: #2F241E; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Cormorant Garamond', serif;">REFLEXÃO</h3>
+                    <p style="color: #554840; font-weight: 400; line-height: 1.6; font-size: 0.95rem;">Compreendendo repetições e descobrindo novos sentidos para a sua história.</p>
+                </div>
+                <!-- Card 03 -->
+                <div class="card-item" style="background: #FBF8F3; border: 1px solid #D8C5B5; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(47, 36, 30, 0.03);">
+                    <span class="card-number" style="color: #A96242; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">03</span>
+                    <h3 style="color: #2F241E; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Cormorant Garamond', serif;">TRANSFORMAÇÃO</h3>
+                    <p style="color: #554840; font-weight: 400; line-height: 1.6; font-size: 0.95rem;">A elaboração psíquica abrindo caminhos para uma vida mais leve e autêntica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco 4: SOBRE MIM -->
+    <section class="section-bloco-cinco" id="sobre" style="background-color: #FBF8F3;">
+        <div class="content-wrapper sobre-grid">
+            <div class="sobre-texto">
+                <span class="badge-emocional">Sobre Mim</span>
+                <h2>Um olhar ético e humano para a sua trajetória.</h2>
+                <p>Meu trabalho é oferecer um espaço de escuta acolhedor e respeitoso, onde você possa falar sobre sua história, seus sentimentos e aquilo que muitas vezes é difícil colocar em palavras. Com formação dedicada à psicanálise clínica, atuo no suporte a angústias, autoconhecimento e nos desafios cotidianos.</p>
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="font-size: 1.25rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; margin-bottom: 0.2rem;">Iranir Moraes</h3>
+                    <p style="color: #A96242; font-weight: 600; font-size: 0.95rem; margin-bottom: 1.5rem;">Psicanalista Clínica</p>
+                </div>
+            </div>
+            <div class="sobre-foto-minima">
+                <img src="perfil.png" alt="Iranir Moraes" style="border-radius: 12px; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco 5: O CONSULTÓRIO -->
+    <section class="section-bloco-espaco" id="espaco" style="background-color: #F5EDE3;">
+        <div class="content-wrapper sobre-grid" style="align-items: center;">
+            <div class="sobre-foto-minima">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Consultório de psicanálise" style="border-radius: 12px; width: 100%; object-fit: cover; height: 400px;">
+            </div>
+            <div class="sobre-texto">
+                <span class="badge-emocional">O Consultório</span>
+                <h2>Um lugar para desacelerar.</h2>
+                <p>Um ambiente pensado e estruturado para acolher você com absoluta privacidade, respeito e tranquilidade, propiciando a segurança ideal para a imersão no processo analítico.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco 6: REDES SOCIAIS / INSTAGRAM -->
+    <section class="section-bloco-instagram" style="background-color: #FBF8F3; text-align: center; padding: 5rem 2rem;">
+        <div class="content-wrapper">
+            <span class="badge-emocional">Conteúdos Diários</span>
+            <h2 style="margin-bottom: 0.8rem; font-weight: 600; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem;">Acompanhe também no Instagram</h2>
+            <p style="max-width: 600px; margin: 0 auto 1.5rem auto; color: #554840; font-weight: 400;">Conteúdos sobre saúde emocional, autoconhecimento e psicanálise.</p>
+            <a href="https://www.instagram.com/psicanalistairani" target="_blank" class="btn-primary" style="background-color: transparent; color: #A96242; border: 1px solid #A96242; font-weight: 500;">[ @psicanalistairani ]</a>
+        </div>
+    </section>
+
+    <!-- Bloco 7: FRASE DE IMPACTO (Terracota Forte Destacado) -->
+    <section class="section-bloco-seis" style="background-color: #A96242; color: #F5EDE3; padding: 5rem 2rem; text-align: center;">
+        <div class="content-wrapper">
+            <blockquote class="citacao-destaque" style="color: #F5EDE3; font-style: italic; font-weight: 500; font-size: 1.8rem; font-family: 'Cormorant Garamond', serif; max-width: 800px; margin: 0 auto; line-height: 1.4;">
+                "Cuidar de você também é aprender a se escutar."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Bloco 8: CONTATO E RODAPÉ -->
+    <section class="section-bloco-sete" id="contato" style="background-color: #8C4E32; color: #F2E8DC; padding: 5rem 2rem 2rem 2rem; text-align: center;">
+        <div class="content-wrapper">
+            <span class="badge-emocional" style="color: #F2E8DC; border-color: rgba(242, 232, 220, 0.3);">Início do Caminho</span>
+            <h2 style="color: #F2E8DC; font-weight: 600; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1rem;">Vamos conversar?</h2>
+            <p style="color: rgba(242, 232, 220, 0.95); max-width: 600px; margin: 0 auto 1.5rem auto; font-weight: 400;">Agende seu primeiro encontro ou tire suas dúvidas pelo WhatsApp.</p>
+            <a href="https://wa.me/556697241646?text=Olá,%20Iranir!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos." target="_blank" class="btn-primary" style="background-color: #F2E8DC; color: #8C4E32; margin-bottom: 3rem; font-weight: 600;">[ 💬 Falar pelo WhatsApp ]</a>
+            
+            <footer class="footer-copy" style="border-top: 1px solid rgba(242, 232, 220, 0.2); padding-top: 2rem; margin-top: 3rem; text-align: center;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #F2E8DC; font-weight: 600; margin-bottom: 0.3rem;">Iranir Moraes</h3>
+                <p style="color: rgba(242, 232, 220, 0.9); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem;">Psicanalista</p>
+                <p style="color: rgba(242, 232, 220, 0.8); font-size: 0.9rem; margin-bottom: 1.5rem;">Atendimento presencial e/ou online</p>
+                
+                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;">
+                    <a href="https://wa.me/556697241646?text=Olá,%20Iranir!" target="_blank" style="color: #F2E8DC; text-decoration: none; font-size: 0.9rem; font-weight: 500;">WhatsApp</a>
+                    <span style="color: rgba(242, 232, 220, 0.4);">·</span>
+                    <a href="https://www.instagram.com/psicanalistairani" target="_blank" style="color: #F2E8DC; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Instagram</a>
+                </div>
+
+                <p style="font-size: 0.85rem; color: rgba(242, 232, 220, 0.6);">&copy; 2026 Iranir Moraes. Todos os direitos reservados.</p>
+            </footer>
         </div>
     </section>
 
