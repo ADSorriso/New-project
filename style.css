@@ -1,0 +1,185 @@
+/* Variáveis de Cores e Tipografia */
+:root {
+    --bg-creme: #F9F6F0;
+    --creme-suave: #F2ECE1;
+    --texto-principal: #332F2C;
+    --texto-suave: #665E59;
+    --terracota: #B86B49;
+    --terracota-hover: #9E583A;
+    --verde-oliva: #5A634E;
+    
+    --fonte-titulo: 'Cormorant Garamond', serif;
+    --fonte-corpo: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-creme);
+    color: var(--texto-principal);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo span {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.logo small {
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--terracota);
+}
+
+.btn-nav {
+    border: 1px solid var(--terracota);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+}
+
+/* Seção Hero */
+.hero-section {
+    padding: 4rem 5% 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+}
+
+.badge-emocional {
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--verde-oliva);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hero-text h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--texto-principal);
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: var(--texto-suave);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+/* Botão Personalizado */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--terracota);
+    color: #FFF;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(184, 107, 73, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--terracota-hover);
+    transform: translateY(-2px);
+}
+
+/* Moldura orgânica da foto */
+.hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.organic-shape {
+    width: 340px;
+    height: 440px;
+    border-radius: 180px 180px 20px 20px; /* Formato de arco orgânico */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(51, 47, 44, 0.08);
+    background-color: var(--creme-suave);
+    border: 4px solid #FFF;
+}
+
+.organic-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsividade para Celulares e Tablets */
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-text p {
+        margin: 0 auto 2.5rem;
+    }
+
+    .nav-menu {
+        display: none; /* Em um projeto real, aqui entraria um menu hambúrguer */
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .organic-shape {
+        width: 280px;
+        height: 360px;
+    }
+}
