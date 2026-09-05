@@ -75,7 +75,7 @@ body {
 
 /* Seção Hero */
 .hero-section {
-    padding: 4rem 5% 6rem;
+    padding: 3rem 5% 5rem;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -135,7 +135,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Moldura orgânica da foto */
+/* Moldura orgânica da foto corrigida */
 .hero-image-wrapper {
     display: flex;
     justify-content: center;
@@ -145,7 +145,7 @@ body {
 .organic-shape {
     width: 340px;
     height: 440px;
-    border-radius: 180px 180px 20px 20px; /* Formato de arco orgânico */
+    border-radius: 180px 180px 16px 16px; /* Formato de arco perfeito */
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(51, 47, 44, 0.08);
     background-color: var(--creme-suave);
@@ -156,6 +156,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* Responsividade para Celulares e Tablets */
@@ -171,7 +172,7 @@ body {
     }
 
     .nav-menu {
-        display: none; /* Em um projeto real, aqui entraria um menu hambúrguer */
+        display: none;
     }
 
     .hero-text h1 {
