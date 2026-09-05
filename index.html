@@ -4,43 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nome da Psicanalista | Psicanálise e Acolhimento</title>
-    <!-- Fontes elegantes -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Bloco 1: HERO (Fundo Creme #F2E8DC com o bloco de destaque orgânico) -->
+    <!-- Header Mobile & Desktop -->
+    <header class="site-header">
+        <div class="logo">
+            <span>SEU NOME</span>
+        </div>
+        
+        <!-- Menu Desktop -->
+        <nav class="nav-menu">
+            <a href="#home" class="active">Home</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato" class="btn-nav">Contato</a>
+        </nav>
+
+        <!-- Botão Menu Hambúrguer (Mobile) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            ☰
+        </button>
+    </header>
+
+    <!-- Menu Lateral Mobile -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <button class="close-menu" id="closeMenu">✕</button>
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#sobre" class="mobile-link">Sobre</a>
+            <a href="#servicos" class="mobile-link">Serviços</a>
+            <a href="#contato" class="mobile-link btn-mobile-agendar">Agendar conversa</a>
+        </div>
+    </div>
+
+    <!-- Bloco 1: HERO (Fundo Creme #F2E8DC - Foto em destaque no mobile) -->
     <section class="hero-section" id="home">
-        <!-- Elementos decorativos sutis de fundo -->
-        <div class="organic-blob-bg"></div>
-
-        <!-- Cabeçalho integrado ao Hero -->
-        <header class="site-header">
-            <div class="logo">
-                <span>SEU NOME</span>
-                <small>Psicanálise Clínica</small>
-            </div>
-            <nav class="nav-menu">
-                <a href="#home" class="active">Home</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#faq">Dúvidas</a>
-                <a href="#contato" class="btn-nav">Contato</a>
-            </nav>
-        </header>
-
         <div class="hero-container">
+            
+            <!-- Foto no topo para Mobile (Invertido via CSS) -->
+            <div class="hero-image-container">
+                <div class="terracota-accent-shape"></div>
+                <div class="organic-frame-photo">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Psicanalista">
+                </div>
+            </div>
+
             <div class="hero-content-box">
                 <span class="badge-emocional">Espaço de Escuta</span>
                 
                 <h1 class="hero-title">
-                    Um espaço para você se escutar.<br>
-                    <span class="hero-subtitle-emocional">Nem sempre precisamos de respostas.</span>
+                    Um espaço para<br>você se escutar.
                 </h1>
                 
                 <p class="hero-desc">
-                    Às vezes, precisamos de espaço para começar a fazer as perguntas. A psicanálise como um caminho de acolhimento, reflexão e transformação.
+                    A psicanálise como um caminho de acolhimento, reflexão e transformação.
                 </p>
                 
                 <div class="hero-actions">
@@ -48,24 +68,74 @@
                 </div>
             </div>
 
-            <!-- Foto com destaque focal, borda grossa e detalhe orgânico atrás -->
-            <div class="hero-image-container">
-                <div class="terracota-accent-shape"></div>
-                <div class="organic-frame-photo">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Psicanalista em seu consultório aconchegante">
+        </div>
+    </section>
+
+    <!-- Bloco 2: Branco Quente (#F8F4EE) - A narrativa continua -->
+    <section class="section-bloco-dois">
+        <div class="content-wrapper">
+            <p class="narrativa-passo">Você chegou até aqui.</p>
+            <h2>Talvez esteja procurando respostas.</h2>
+            <p class="narrativa-sub">Ou talvez só precise de um espaço para falar sem julgamentos.</p>
+        </div>
+    </section>
+
+    <!-- Bloco 3: Terracota (#A96342) - Como funciona -->
+    <section class="section-bloco-tres">
+        <div class="content-wrapper">
+            <span class="badge-emocional light">O Processo</span>
+            <h2>Aqui, você pode se escutar.</h2>
+            <p>Um ambiente seguro estruturado em encontros regulares de escuta profunda e elaboração emocional.</p>
+        </div>
+    </section>
+
+    <!-- Bloco 4: Cards Empilhados no Mobile (Escuta, Reflexão, Transformação) -->
+    <section class="section-bloco-quatro">
+        <div class="content-wrapper">
+            <div class="cards-stack">
+                <div class="card-item">
+                    <span class="card-number">01</span>
+                    <h3>ESCUTA</h3>
+                    <p>Um tempo dedicado exclusivamente a você e ao que habita seus pensamentos.</p>
+                </div>
+                <div class="card-item">
+                    <span class="card-number">02</span>
+                    <h3>REFLEXÃO</h3>
+                    <p>Compreendendo repetições e descobrindo novos sentidos para a sua história.</p>
+                </div>
+                <div class="card-item">
+                    <span class="card-number">03</span>
+                    <h3>TRANSFORMAÇÃO</h3>
+                    <p>A elaboração psíquica abrindo caminhos para uma vida mais leve e autêntica.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bloco 2: Branco Quente (#F8F4EE) para criar o ritmo que você sugeriu -->
-    <section class="section-bloco-dois">
-        <div class="content-wrapper">
-            <span class="badge-emocional">Reflexão</span>
-            <h2>Talvez você esteja passando por isso...</h2>
-            <p>O sofrimento silencioso, a repetição de padrões ou o peso de dar conta de tudo sozinho(a) encontram aqui um lugar seguro para serem elaborados.</p>
-        </div>
-    </section>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
+        💬
+    </a>
 
+    <!-- Script Simples para o Menu Mobile -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
