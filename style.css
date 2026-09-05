@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 6%;
+    padding: 2rem 6%;
     max-width: 1300px;
     margin: 0 auto;
     position: relative;
@@ -72,7 +72,7 @@ body {
     color: var(--terracota) !important;
 }
 
-/* Menu Hambúrguer (Oculto no Desktop) */
+/* Menu Hambúrguer e Overlay Ocultos por Padrão no Desktop */
 .menu-toggle {
     display: none;
     background: none;
@@ -94,10 +94,12 @@ body {
     justify-content: center;
     align-items: center;
     transition: right 0.4s ease;
+    visibility: hidden; /* Oculta totalmente para não vazar texto na tela */
 }
 
 .mobile-menu-overlay.active {
     right: 0;
+    visibility: visible;
 }
 
 .mobile-menu-content {
@@ -135,19 +137,27 @@ body {
     font-family: var(--fonte-corpo) !important;
 }
 
-/* Hero Section */
+/* Hero Section (Desktop: Texto Esquerda, Foto Direita) */
 .hero-section {
     background-color: var(--creme-principal);
-    padding: 2rem 6% 4rem;
+    padding: 2rem 6% 5rem;
 }
 
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: 4rem;
     align-items: center;
+}
+
+.hero-content-box {
+    background: rgba(255, 255, 255, 0.45);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(216, 191, 165, 0.4);
 }
 
 .badge-emocional {
@@ -166,9 +176,9 @@ body {
 
 .hero-title {
     font-family: var(--fonte-titulo);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.15;
     color: var(--texto-principal);
     margin-bottom: 1.2rem;
 }
@@ -185,7 +195,7 @@ body {
     justify-content: center;
     background-color: var(--terracota);
     color: #FFF;
-    height: 48px; /* Altura confortável de toque */
+    height: 48px;
     padding: 0 2rem;
     border-radius: 6px;
     text-decoration: none;
@@ -279,7 +289,6 @@ body {
     margin: 0 auto;
 }
 
-/* Bloco 4: Cards Empilhados */
 .section-bloco-quatro {
     background-color: var(--bege-cards);
     padding: 6rem 6%;
@@ -320,7 +329,7 @@ body {
     color: var(--texto-suave);
 }
 
-/* Botão Flutuante do WhatsApp */
+/* WhatsApp Flutuante */
 .whatsapp-float {
     position: fixed;
     bottom: 25px;
@@ -344,7 +353,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ================= ADAPTAÇÕES MOBILE ESPECÍFICAS ================= */
+/* ================= COMPORTAMENTO EXCLUSIVO MOBILE ================= */
 @media (max-width: 900px) {
     .nav-menu {
         display: none;
@@ -354,7 +363,7 @@ body {
         display: block;
     }
 
-    /* Inverte a ordem no mobile: Foto vem primeiro! */
+    /* No celular, a foto vem primeiro e o texto em seguida */
     .hero-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -362,22 +371,18 @@ body {
     }
 
     .hero-image-container {
-        order: 1; /* Foto em cima */
+        order: 1; 
     }
 
     .hero-content-box {
-        order: 2; /* Texto embaixo */
+        order: 2; 
+        padding: 2rem;
     }
 
     .hero-title {
-        font-size: 2.4rem; /* Reduzido proporcionalmente para ~40px */
+        font-size: 2.4rem;
     }
 
-    .hero-desc {
-        font-size: 1rem;
-    }
-
-    /* Cards empilhados verticalmente com bastante espaçamento conforme sugerido */
     .cards-stack {
         grid-template-columns: 1fr;
         gap: 2.5rem; 
