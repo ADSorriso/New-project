@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nome da Psicanalista | Psicanálise e Acolhimento</title>
+    <!-- Fontes elegantes -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -40,7 +41,7 @@
         </div>
     </div>
 
-    <!-- Bloco 1: HERO (Fundo Creme #F2E8DC - Foto em destaque no mobile) -->
+    <!-- Bloco 1: HERO (Fundo Creme #F2E8DC) -->
     <section class="hero-section" id="home">
         <div class="hero-container">
             
@@ -71,7 +72,7 @@
         </div>
     </section>
 
-    <!-- Bloco 2: Branco Quente (#F8F4EE) - A narrativa continua -->
+    <!-- Bloco 2: Branco Quente (#F8F4EE) -->
     <section class="section-bloco-dois">
         <div class="content-wrapper">
             <p class="narrativa-passo">Você chegou até aqui.</p>
@@ -80,8 +81,8 @@
         </div>
     </section>
 
-    <!-- Bloco 3: Terracota (#A96342) - Como funciona -->
-    <section class="section-bloco-tres">
+    <!-- Bloco 3: Terracota (#A96342) -->
+    <section class="section-bloco-tres" id="servicos">
         <div class="content-wrapper">
             <span class="badge-emocional light">O Processo</span>
             <h2>Aqui, você pode se escutar.</h2>
@@ -89,7 +90,7 @@
         </div>
     </section>
 
-    <!-- Bloco 4: Cards Empilhados no Mobile (Escuta, Reflexão, Transformação) -->
+    <!-- Bloco 4: Cards Empilhados -->
     <section class="section-bloco-quatro">
         <div class="content-wrapper">
             <div class="cards-stack">
@@ -112,12 +113,51 @@
         </div>
     </section>
 
-    <!-- Botão Flutuante do WhatsApp -->
+    <!-- Bloco 5: Sobre a Psicanalista -->
+    <section class="section-bloco-cinco" id="sobre">
+        <div class="content-wrapper sobre-grid">
+            <div class="sobre-texto">
+                <span class="badge-emocional">Sobre Mim</span>
+                <h2>Um olhar ético e humano para a sua trajetória.</h2>
+                <p>Acredito que cada análise é única. Meu trabalho é oferecer um solo firme e confidencial onde você possa desmontar o excesso de ruídos e reencontrar a sua própria voz.</p>
+            </div>
+            <div class="sobre-foto-minima">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Consultório de psicanálise">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloco 6: Frase de Impacto -->
+    <section class="section-bloco-seis">
+        <div class="content-wrapper text-center">
+            <blockquote class="citacao-destaque">
+                "O que não pode ser dito com palavras, acaba se manifestando no corpo e na repetição."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Bloco 7: Rodapé / Agendamento -->
+    <section class="section-bloco-sete" id="contato">
+        <div class="content-wrapper text-center">
+            <span class="badge-emocional">Início do Caminho</span>
+            <h2>Vamos conversar?</h2>
+            <p>O primeiro passo pode ser o mais simples. Entre em contato para alinharmos os horários disponíveis.</p>
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20agendar%20uma%20conversa." class="btn-primary">[ Agendar pelo WhatsApp ]</a>
+            
+            <footer class="footer-copy">
+                <p>&copy; 2026 Seu Nome. Todos os direitos reservados. Psicanálise Clínica.</p>
+            </footer>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante do WhatsApp com ícone oficial SVG -->
     <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
-        💬
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.1c-1.42 0-2.81-.38-4.03-1.1l-.29-.17-3.04.8.81-2.96-.19-.31c-.81-1.31-1.23-2.83-1.23-4.38 0-4.55 3.7-8.25 8.25-8.25 2.2 0 4.27.86 5.82 2.42 1.56 1.56 2.42 3.63 2.42 5.82 0 4.55-3.7 8.25-8.25 8.25zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.09-.4-.13-.57.13-.18.25-.65.81-.8 1-.15.18-.3.2-.55.08-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.57-1.38-.78-1.89c-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.69.32-.24.25-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.69.13.17 1.83 2.79 4.43 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.62.1.5-.08 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/>
+        </svg>
     </a>
 
-    <!-- Script Simples para o Menu Mobile -->
+    <!-- Script para o Menu Mobile -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
