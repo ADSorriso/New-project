@@ -41,6 +41,25 @@ body {
     z-index: 10;
 }
 
+/* Estilo e Brilho Suave da Logo */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    transition: all 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.9));
+    transform: scale(1.02);
+}
+
 .logo span {
     font-family: var(--fonte-titulo);
     font-size: 1.4rem;
