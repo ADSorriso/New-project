@@ -3,575 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iranir Moraes | Psicanálise e Acolhimento</title>
-    <!-- Fontes elegantes com pesos adicionais (400, 500, 600) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Espaço Terapêutico Restauração | Psicanálise Clínica</title>
+    <!-- Fontes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Globais e Base */
+        :root {
+            --bg-primary: #FBF8F3;
+            --bg-secondary: #F5EDE3;
+            --text-main: #2C241E;
+            --accent-gold: #c5a059;
+            --accent-terracotta: #A96242;
+            --white: #FFFFFF;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #F5EDE3;
-            color: #2F241E;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        /* Header Desktop */
+        /* Header */
         .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 3rem;
-            background-color: #F5EDE3;
-            z-index: 100;
-            border-bottom: 1px solid #D8C5B5;
+            padding: 1.2rem 5%;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo span {
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            letter-spacing: 2px;
             font-size: 1.2rem;
-            color: #2F241E;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #2F241E;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-menu a:hover {
-            color: #A96242;
-        }
-
-        .btn-nav {
-            padding: 0.6rem 1.2rem;
-            border: 1px solid #A96242;
-            border-radius: 4px;
-            color: #A96242 !important;
-            font-weight: 500;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #2F241E;
-        }
-
-        /* Menu Mobile Compacto e Sofisticado */
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: #2F241E; 
-            color: #F5EDE3;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .mobile-menu-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .mobile-menu-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 22px; 
-            text-align: center;
-            width: 100%;
-            padding: 1.5rem;
-        }
-
-        .close-menu {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: none;
-            border: none;
-            color: #F5EDE3;
-            font-size: 1.5rem;
-            cursor: pointer;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .close-menu:hover {
-            opacity: 1;
-        }
-
-        .mobile-link {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 500;
-            color: #F5EDE3;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .mobile-link:hover {
-            color: #D8C5B5;
-        }
-
-        .mobile-instagram {
-            font-size: 20px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 400;
-            opacity: 0.85;
-        }
-
-        .mobile-contato-link {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 0.95rem;
             font-weight: 600;
-            color: #A96242 !important;
-            margin-top: 10px;
             letter-spacing: 1px;
-            text-transform: uppercase;
+            background: linear-gradient(135deg, #bf953f 0%, #fc6 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.1));
         }
 
-        /* Estrutura Geral */
+        .nav-desktop {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-desktop a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-desktop a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        .btn-whatsapp-topo {
+            background-color: #2C241E;
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp-topo:hover {
+            background-color: var(--accent-terracotta);
+        }
+
+        /* Hero com Imagem de Fundo Imersiva */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('consultorio-capa.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 7rem 5% 6rem 5%;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-section h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+            font-weight: 600;
+        }
+
+        .hero-section p {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #F5EDE3;
+            color: #2C241E;
+            padding: 0.8rem 1.6rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-hero:hover {
+            background-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 5rem 5%;
+        }
+
         .content-wrapper {
             max-width: 1100px;
             margin: 0 auto;
-            width: 100%;
-        }
-
-        section {
-            padding: 6rem 2rem;
-        }
-
-        /* Bloco 1: HERO */
-        .hero-section {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 8rem;
-        }
-
-        .hero-container {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-image-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .organic-frame-photo img {
-            width: 100%;
-            max-width: 380px;
-            height: 460px;
-            object-fit: cover;
-            border-radius: 200px 200px 20px 20px;
-        }
-
-        .hero-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            line-height: 1.15;
-            color: #2F241E;
-            margin-bottom: 1.2rem;
-            font-weight: 600;
-        }
-
-        .hero-desc {
-            font-size: 1.05rem;
-            color: #554840;
-            margin-bottom: 2rem;
-            line-height: 1.6;
         }
 
         .badge-emocional {
             display: inline-block;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            color: #A96242;
-            border: 1px solid #D8C5B5;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 0.9rem 1.8rem;
-            background-color: #A96242;
-            color: #F5EDE3;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: opacity 0.3s;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        /* Bloco 2: Identificação */
-        .section-bloco-dois {
-            text-align: center;
-            background-color: #FBF8F3;
-        }
-
-        .narrativa-passo {
-            font-size: 0.8rem;
             letter-spacing: 2px;
-            color: #A96242;
-            margin-bottom: 1rem;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
-        .section-bloco-dois h2 {
+        h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            color: #2F241E;
-            margin-bottom: 1rem;
+            font-size: 2.3rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-main);
         }
 
-        .narrativa-sub {
-            font-size: 1.1rem;
-            color: #554840;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Blocos Sobre e Espaço (Grid) */
+        /* Bloco Sobre Mim */
         .sobre-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
             align-items: center;
-        }
-
-        .sobre-texto h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            color: #2F241E;
-            margin-bottom: 1.2rem;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        .sobre-texto p {
-            color: #554840;
-            line-height: 1.7;
-            margin-bottom: 1.2rem;
-        }
-
-        .sobre-foto-minima img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+            background: var(--white);
+            padding: 3rem;
             border-radius: 12px;
+            border: 1px solid rgba(44, 36, 30, 0.05);
         }
 
-        /* Botão Flutuante do WhatsApp Ajustado para Mobile */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 18px;
-            background-color: #25D366;
-            color: #FFF;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
+        .sobre-foto {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Áreas de Atuação (Ícones em linha) */
+        .atuacao-container {
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .atuacao-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .atuacao-item {
+            background: var(--white);
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* Processo Passos */
+        .processo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .processo-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            border: 1px solid rgba(44, 36, 30, 0.05);
+        }
+
+        .processo-numero {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--accent-terracotta);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Estilo Acordeão Simples */
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 1.2rem 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(44, 36, 30, 0.08);
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 99;
-            transition: transform 0.3s;
+            font-weight: 500;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.05);
+        /* Banner Instagram */
+        .insta-banner {
+            background: #241D18;
+            color: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            align-items: center;
+            overflow: hidden;
         }
 
-        /* Responsividade refinada para Mobile */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero-container, .sobre-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 1.5rem;
-            }
-            .hero-section {
-                padding-top: 6rem;
-                min-height: auto;
-                padding-bottom: 3rem;
-            }
-            /* Redução de 15-20% na altura da foto no mobile */
-            .organic-frame-photo img {
-                height: 370px; 
-                max-width: 290px;
-            }
-            .hero-title {
-                font-size: 2.3rem;
-                font-weight: 600; /* Maior presença visual solicitada */
-            }
-            .section-bloco-dois h2 {
-                font-size: 2.2rem;
-            }
-            .sobre-texto h2 {
-                font-size: 2rem;
-            }
-            .site-header {
-                padding: 1.2rem 1.5rem;
-            }
-            section {
-                padding: 4rem 1.5rem;
-            }
+        /* Rodapé */
+        footer {
+            background-color: #1a1512;
+            color: #A3968C;
+            padding: 4rem 5% 2rem 5%;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-links-sociais {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links-sociais a {
+            color: #E2DBD4;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade Básica */
+        @media(max-width: 900px) {
+            .sobre-grid { grid-template-columns: 1fr; text-align: center; }
+            .atuacao-grid { grid-template-columns: 1fr 1fr; }
+            .processo-grid { grid-template-columns: 1fr; }
+            .insta-banner { grid-template-columns: 1fr; text-align: center; }
+            .nav-desktop { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Mobile & Desktop -->
+    <!-- Header -->
     <header class="site-header">
-       <div class="logo">
-  <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; letter-spacing: 1px; background: linear-gradient(135deg, #bf953f 0%, #fc6 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.1));">
-    Espaço Terapêutico Restauração
-  </span>
-</div>
-        
-        <!-- Menu Desktop -->
-        <nav class="nav-menu">
-            <a href="#home">Início</a>
-            <a href="#sobre">Sobre mim</a>
-            <a href="#servicos">Processo</a>
-            <a href="#espaco">O espaço</a>
-            <a href="https://www.instagram.com/psicanalistairani" target="_blank">Instagram</a>
-            <a href="#contato" class="btn-nav">Contato</a>
-        </nav>
-
-        <!-- Botão Menu Hambúrguer (Mobile) -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-            ☰
-        </button>
+        <div class="logo">
+            <span>Espaço Terapêutico Restauração</span>
+        </div>
+        <ul class="nav-desktop">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre mim</a></li>
+            <li><a href="#atendimento">Atendimento</a></li>
+            <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/556697241646" target="_blank" class="btn-whatsapp-topo">
+            💬 Falar no WhatsApp
+        </a>
     </header>
 
-    <!-- Menu Lateral Mobile Refinado -->
-    <div class="mobile-menu-overlay" id="mobileMenu">
-        <button class="close-menu" id="closeMenu" aria-label="Fechar menu">✕</button>
-        <div class="mobile-menu-content">
-            <a href="#home" class="mobile-link">Início</a>
-            <a href="#sobre" class="mobile-link">Sobre mim</a>
-            <a href="#servicos" class="mobile-link">Processo</a>
-            <a href="#espaco" class="mobile-link">O espaço</a>
-            <a href="https://www.instagram.com/psicanalistairani" target="_blank" class="mobile-link mobile-instagram">◎ Instagram</a>
-            <a href="#contato" class="mobile-link mobile-contato-link">[ Falar no WhatsApp ]</a>
+    <!-- Bloco 1: HERO com Imagem de Consultório -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <span class="badge-emocional" style="color: #F5EDE3;">PSICANÁLISE</span>
+            <h1>Um espaço para você se escutar.</h1>
+            <p>Aqui, você encontra um ambiente acolhedor, seguro e sem julgamentos, para falar sobre o que sente, pensa e vive.</p>
+            <a href="https://wa.me/556697241646" target="_blank" class="btn-hero">
+                💬 Agendar pelo WhatsApp
+            </a>
         </div>
-    </div>
+    </section>
 
-    <!-- Bloco 1: HERO -->
-    <section class="hero-section" id="home">
-        <div class="hero-container">
-            <div class="hero-image-container">
-                <div class="organic-frame-photo">
-                    <img src="perfil.png" alt="Iranir Moraes - Psicanalista" style="object-position: 70% 25%;">
-                </div>
-            </div>
-
-            <div class="hero-content-box">
-                <span class="badge-emocional">Espaço de Escuta</span>
-                <h1 class="hero-title">Um espaço para<br>você se escutar.</h1>
-                <p class="hero-desc">A psicanálise como um caminho de acolhimento, reflexão e transformação.</p>
-                <div class="hero-actions">
-                    <a href="https://wa.me/556697241646?text=Olá,%20Iranir!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos." target="_blank" class="btn-primary">[ Agendar uma conversa ]</a>
+    <!-- Bloco 2: SOBRE MIM -->
+    <section id="sobre">
+        <div class="content-wrapper">
+            <div class="sobre-grid">
+                <img src="perfil.png" alt="Iranir Moraes" class="sobre-foto">
+                <div>
+                    <span class="badge-emocional">SOBRE MIM</span>
+                    <h2>Iranir Moraes</h2>
+                    <p style="color: var(--accent-terracotta); font-weight: 600; margin-bottom: 1rem;">Psicanalista Clínica</p>
+                    <p style="font-size: 0.95rem; color: #554840; margin-bottom: 1rem;">
+                        Sou Iranir Moraes, psicanalista clínica, formada em Psicologia e com especialização em Psicanálise. Acredito no poder da escuta como ferramenta de transformação e no respeito à singularidade de cada história.
+                    </p>
+                    <p style="font-size: 0.95rem; color: #554840; margin-bottom: 1.5rem;">
+                        Meu trabalho é oferecer um espaço ético, humano e acolhedor para que você possa se conhecer e ressignificar o que te faz sofrer.
+                    </p>
+                    <a href="https://wa.me/556697241646" target="_blank" style="color: var(--accent-terracotta); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Saiba mais sobre mim →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bloco 2: IDENTIFICAÇÃO EMOCIONAL -->
-    <section class="section-bloco-dois">
+    <!-- Bloco 3: ÁREAS DE ATUAÇÃO -->
+    <section class="atuacao-container">
         <div class="content-wrapper">
-            <p class="narrativa-passo">VOCÊ CHEGOU ATÉ AQUI.</p>
-            <h2>Talvez esteja procurando respostas.</h2>
-            <p class="narrativa-sub">Ou talvez só precise de um espaço onde possa falar sem precisar fingir que está tudo bem.</p>
+            <span class="badge-emocional">COMO A PSICANÁLISE PODE AJUDAR</span>
+            <h2>Questões que podemos trabalhar juntos.</h2>
+            <div class="atuacao-grid">
+                <div class="atuacao-item">🧠 Ansiedade</div>
+                <div class="atuacao-item">❤️ Autoestima</div>
+                <div class="atuacao-item">👥 Relacionamentos</div>
+                <div class="atuacao-item">🌱 Autoconhecimento</div>
+                <div class="atuacao-item">🪷 Conflitos emocionais</div>
+            </div>
         </div>
     </section>
 
-    <!-- Bloco 3: O PROCESSO -->
-    <section class="section-bloco-tres" id="servicos" style="background-color: #F5EDE3; color: #2F241E;">
+    <!-- Bloco 4: COMO FUNCIONA (PASSOS) -->
+    <section style="background-color: var(--bg-primary);">
         <div class="content-wrapper">
-            <span class="badge-emocional" style="color: #A96242; border-color: #D8C5B5; font-weight: 600;">O PROCESSO</span>
-            <h2 style="color: #2F241E; margin-bottom: 2.5rem; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600;">Aqui, você pode se escutar.</h2>
+            <span class="badge-emocional">COMO FUNCIONA</span>
+            <h2>Um processo simples e acolhedor.</h2>
+            <p style="color: #554840; max-width: 600px;">Cada pessoa tem um ritmo. O atendimento é construído de forma única, respeitando o seu momento e suas necessidades.</p>
             
-            <div class="cards-stack" style="margin-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <!-- Card 01 -->
-                <div class="card-item" style="background: #FBF8F3; border: 1px solid #D8C5B5; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(47, 36, 30, 0.03);">
-                    <span class="card-number" style="color: #A96242; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">01</span>
-                    <h3 style="color: #2F241E; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Cormorant Garamond', serif;">ESCUTA</h3>
-                    <p style="color: #554840; font-weight: 400; line-height: 1.6; font-size: 0.95rem;">Um tempo dedicado exclusivamente a você e ao que habita seus pensamentos.</p>
+            <div class="processo-grid">
+                <div class="processo-card">
+                    <div class="processo-numero">1</div>
+                    <h4 style="margin-bottom: 0.5rem;">Primeiro contato</h4>
+                    <p style="font-size: 0.9rem; color: #554840;">Você pode me chamar pelo WhatsApp ou Instagram para fazer um primeiro contato.</p>
                 </div>
-                <!-- Card 02 -->
-                <div class="card-item" style="background: #FBF8F3; border: 1px solid #D8C5B5; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(47, 36, 30, 0.03);">
-                    <span class="card-number" style="color: #A96242; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">02</span>
-                    <h3 style="color: #2F241E; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Cormorant Garamond', serif;">REFLEXÃO</h3>
-                    <p style="color: #554840; font-weight: 400; line-height: 1.6; font-size: 0.95rem;">Compreendendo repetições e descobrindo novos sentidos para a sua história.</p>
+                <div class="processo-card">
+                    <div class="processo-numero">2</div>
+                    <h4 style="margin-bottom: 0.5rem;">Primeira conversa</h4>
+                    <p style="font-size: 0.9rem; color: #554840;">É um momento para você falar sobre o que te trouxe até aqui e tirar suas dúvidas.</p>
                 </div>
-                <!-- Card 03 -->
-                <div class="card-item" style="background: #FBF8F3; border: 1px solid #D8C5B5; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(47, 36, 30, 0.03);">
-                    <span class="card-number" style="color: #A96242; font-weight: 600; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">03</span>
-                    <h3 style="color: #2F241E; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.8rem; font-family: 'Cormorant Garamond', serif;">TRANSFORMAÇÃO</h3>
-                    <p style="color: #554840; font-weight: 400; line-height: 1.6; font-size: 0.95rem;">A elaboração psíquica abrindo caminhos para uma vida mais leve e autêntica.</p>
+                <div class="processo-card">
+                    <div class="processo-numero">3</div>
+                    <h4 style="margin-bottom: 0.5rem;">Início do processo</h4>
+                    <p style="font-size: 0.9rem; color: #554840;">Combinamos a frequência das sessões e começamos juntos essa jornada.</p>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Bloco 4: SOBRE MIM -->
-<section id="sobre" class="section-bloco-cinco" style="background-color: #FBF8F3;">
-    <div class="content-wrapper sobre-grid" style="align-items: center;">
-        <div class="sobre-foto-minima" style="display: flex; justify-content: center; align-items: center;">
-            <img src="perfil.png" alt="Iranir Moraes" style="width: 100%; max-width: 350px; height: auto; border-radius: 12px; display: block; object-fit: cover;">
-        </div>
-        <div class="sobre-texto">
-            <span class="badge-emocional">Sobre Mim</span>
-            <h2>Um olhar ético e humano para a sua trajetória.</h2>
-            <p>Meu trabalho é oferecer um espaço de escuta acolhedora e respeitoso, onde você possa falar sobre sua história, seus sentimentos e aquilo que muitas vezes é difícil colocar em palavras. Com formação dedicada à psicanálise clínica, atuo no suporte a angústias, autoconhecimento e nos desafios cotidianos.</p>
-            <div style="margin-top: 1.5rem;">
-                <h3 style="font-size: 1.25rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; margin-bottom: 0.2rem;">Iranir Moraes</h3>
-                <p style="color: #A96242; font-weight: 600; font-size: 0.95rem; margin-bottom: 1.5rem;">Psicanalista Clínica</p>
+    <!-- Bloco 5: DETALHES DO ATENDIMENTO -->
+    <section id="atendimento" style="background-color: var(--bg-secondary);">
+        <div class="content-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div>
+                <img src="consultorio-detalhe.jpg" alt="Consultório" style="width: 100%; border-radius: 8px; height: 320px; object-fit: cover;">
+            </div>
+            <div>
+                <span class="badge-emocional">ATENDIMENTO</span>
+                <h2>Como funciona?</h2>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                    <li style="display: flex; gap: 10px; align-items: center;">💻 <strong>Online e presencial</strong> <span style="font-size: 0.85rem; color: #776558;">(consulte a disponibilidade)</span></li>
+                    <li style="display: flex; gap: 10px; align-items: center;">⏱️ <strong>Sessões de 50 minutos</strong> (em média)</li>
+                    <li style="display: flex; gap: 10px; align-items: center;">📅 <strong>Frequência semanal</strong> ou quinzenal</li>
+                    <li style="display: flex; gap: 10px; align-items: center;">👥 <strong>Adultos, adolescentes</strong> e idosos</li>
+                </ul>
             </div>
         </div>
-    </div>
-</section>
-
-  <!-- Bloco 5: O CONSULTÓRIO -->
-<section class="section-bloco-espaco" id="espaco" style="background-color: #F5EDE3;">
-    <div class="content-wrapper sobre-grid" style="align-items: center;">
-        <div class="sobre-foto-minima" style="border-radius: 12px; overflow: hidden; max-width: 320px; margin: 0 auto;">
-            <img src="nome-da-sua-foto.png" alt="Iranir Moraes - Consultório" style="width: 100%; height: auto; max-height: 400px; object-fit: cover; display: block; border-radius: 12px;">
-        </div>
-        <div class="sobre-texto">
-            <span class="badge-emocional">O Consultório</span>
-            <h2>Um lugar para desacelerar.</h2>
-            <p>Um ambiente pensado e estruturado para acolher você com absoluta privacidade, respeito e tranquilidade, propiciando a segurança ideal para a imersão no processo analítico.</p>
-        </div>
-    </div>
-</section>
-
-    <!-- Bloco 6: REDES SOCIAIS / INSTAGRAM -->
-    <section class="section-bloco-instagram" style="background-color: #FBF8F3; text-align: center; padding: 5rem 2rem;">
-        <div class="content-wrapper">
-            <span class="badge-emocional">Conteúdos Diários</span>
-            <h2 style="margin-bottom: 0.8rem; font-weight: 600; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem;">Acompanhe também no Instagram</h2>
-            <p style="max-width: 600px; margin: 0 auto 1.5rem auto; color: #554840; font-weight: 400;">Conteúdos sobre saúde emocional, autoconhecimento e psicanálise.</p>
-            <a href="https://www.instagram.com/psicanalistairani" target="_blank" class="btn-primary" style="background-color: transparent; color: #A96242; border: 1px solid #A96242; font-weight: 500;">[ @psicanalistairani ]</a>
-        </div>
     </section>
 
-    <!-- Bloco 7: FRASE DE IMPACTO -->
-    <section class="section-bloco-seis" style="background-color: #A96242; color: #F5EDE3; padding: 5rem 2rem; text-align: center;">
-        <div class="content-wrapper">
-            <blockquote class="citacao-destaque" style="color: #F5EDE3; font-style: italic; font-weight: 500; font-size: 1.8rem; font-family: 'Cormorant Garamond', serif; max-width: 800px; margin: 0 auto; line-height: 1.4;">
-                "Cuidar de você também é aprender a se escutar."
-            </blockquote>
-        </div>
-    </section>
-
-    <!-- Bloco 8: CONTATO E RODAPÉ -->
-    <section class="section-bloco-sete" id="contato" style="background-color: #8C4E32; color: #F2E8DC; padding: 5rem 2rem 2rem 2rem; text-align: center;">
-        <div class="content-wrapper">
-            <span class="badge-emocional" style="color: #F2E8DC; border-color: rgba(242, 232, 220, 0.3);">Início do Caminho</span>
-            <h2 style="color: #F2E8DC; font-weight: 600; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 1rem;">Vamos conversar?</h2>
-            <p style="color: rgba(242, 232, 220, 0.95); max-width: 600px; margin: 0 auto 1.5rem auto; font-weight: 400;">Agende seu primeiro encontro ou tire suas dúvidas pelo WhatsApp.</p>
-            <a href="https://wa.me/556697241646?text=Olá,%20Iranir!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos." target="_blank" class="btn-primary" style="background-color: #F2E8DC; color: #8C4E32; margin-bottom: 3rem; font-weight: 600;">[ 💬 Falar pelo WhatsApp ]</a>
+    <!-- Bloco 6: FAQ e INSTAGRAM -->
+    <section id="faq">
+        <div class="content-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+            <div>
+                <span class="badge-emocional">PERGUNTAS FREQUENTES</span>
+                <h2>Tire suas dúvidas.</h2>
+                <div class="faq-container" style="margin-top: 1.5rem;">
+                    <div class="faq-item"><span>Como funciona a primeira sessão?</span> <span>+</span></div>
+                    <div class="faq-item"><span>Quanto tempo dura cada sessão?</span> <span>+</span></div>
+                    <div class="faq-item"><span>É possível fazer online?</span> <span>+</span></div>
+                    <div class="faq-item"><span>Como agendar?</span> <span>+</span></div>
+                </div>
+            </div>
             
-            <footer class="footer-copy" style="border-top: 1px solid rgba(242, 232, 220, 0.2); padding-top: 2rem; margin-top: 3rem; text-align: center;">
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #F2E8DC; font-weight: 600; margin-bottom: 0.3rem;">Iranir Moraes</h3>
-                <p style="color: rgba(242, 232, 220, 0.9); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem;">Psicanalista</p>
-                <p style="color: rgba(242, 232, 220, 0.8); font-size: 0.9rem; margin-bottom: 1.5rem;">Atendimento presencial e/ou online</p>
-                
-                <div style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem;">
-                    <a href="https://wa.me/556697241646?text=Olá,%20Iranir!" target="_blank" style="color: #F2E8DC; text-decoration: none; font-size: 0.9rem; font-weight: 500;">WhatsApp</a>
-                    <span style="color: rgba(242, 232, 220, 0.4);">·</span>
-                    <a href="https://www.instagram.com/psicanalistairani" target="_blank" style="color: #F2E8DC; text-decoration: none; font-size: 0.9rem; font-weight: 500;">Instagram</a>
+            <div>
+                <div class="insta-banner">
+                    <div>
+                        <span class="badge-emocional" style="color: #c5a059;">ACOMPANHE MEU TRABALHO</span>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 0.8rem;">Mais reflexões, conteúdos e novidades no Instagram.</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #d0c5bc;">@iranir.moraes</p>
+                        <a href="https://www.instagram.com/psicanalistairani" target="_blank" class="btn-hero" style="background-color: var(--white);">Conhecer Instagram</a>
+                    </div>
                 </div>
-
-                <p style="font-size: 0.85rem; color: rgba(242, 232, 220, 0.6);">&copy; 2026 Iranir Moraes. Todos os direitos reservados.</p>
-            </footer>
+            </div>
         </div>
     </section>
 
-    <!-- Botão Flutuante do WhatsApp Atualizado -->
-    <a href="https://wa.me/556697241646?text=Olá,%20Iranir!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01C17.18 3.03 14.69 2 12.04 2zM12.04 20.1c-1.42 0-2.81-.38-4.03-1.1l-.29-.17-3.04.8.81-2.96-.19-.31c-.81-1.31-1.23-2.83-1.23-4.38 0-4.55 3.7-8.25 8.25-8.25 2.2 0 4.27.86 5.82 2.42 1.56 1.56 2.42 3.63 2.42 5.82 0 4.55-3.7 8.25-8.25 8.25zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.09-.4-.13-.57.13-.18.25-.65.81-.8 1-.15.18-.3.2-.55.08-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.52.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45s-.57-1.38-.78-1.89c-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.45.06-.69.32-.24.25-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.69.13.17 1.83 2.79 4.43 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.62.1.5-.08 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3z"/>
-        </svg>
-    </a>
+    <!-- Bloco 7: CHAMADA FINAL -->
+    <section id="contato" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('consultorio-capa.jpg') center/cover no-repeat; color: var(--white); text-align: center;">
+        <div class="content-wrapper">
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; margin-bottom: 0.5rem; color: var(--white);">Vamos conversar?</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9;">Seu bem-estar emocional importa. Estou aqui para te ouvir.</p>
+            <a href="https://wa.me/556697241646" target="_blank" class="btn-hero" style="background-color: var(--white); color: #2C241E;">
+                💬 Agendar pelo WhatsApp
+            </a>
+        </div>
+    </section>
 
-    <!-- Script para o Menu Mobile -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMenu = document.getElementById('closeMenu');
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); display: block; margin-bottom: 4px;">Iranir Moraes</span>
+                <span style="font-size: 0.85rem; color: #a3968c;">Psicanalista Clínica</span>
+            </div>
+            <div style="font-size: 0.85rem;">
+                Atendimento presencial e/ou online
+            </div>
+            <div class="footer-links-sociais">
+                <a href="https://wa.me/556697241646" target="_blank">WhatsApp</a>
+                <a href="https://www.instagram.com/psicanalistairani" target="_blank">Instagram</a>
+                <a href="mailto:contato@espacorestauration.com">E-mail</a>
+            </div>
+            <div style="font-size: 0.8rem; color: #776558; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; text-align: center;">
+                © 2026 Iranir Moraes. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-    </script>
 </body>
 </html>
