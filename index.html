@@ -178,17 +178,18 @@
             position: relative;
         }
 
-        .hero-foto-container img {
-            width: 100%;
-            max-width: 440px;
-            height: 400px;
-            object-fit: cover;
-            border-top-left-radius: 120px;
-            border-top-right-radius: 12px;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
+       .hero-foto-container img {
+    width: 100%;
+    max-width: 440px;
+    height: 400px;
+    object-fit: contain; /* Ajusta a imagem inteira dentro da área sem cortar */
+    background-color: rgba(255, 255, 255, 0.05); /* Fundo opcional para preencher eventuais espaços */
+    border-top-left-radius: 120px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
 
         .hero-quote {
             margin-top: 1rem;
