@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espaço Terapêutico Restauração | Psicanálise Clínica</title>
     <!-- Fontes Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-primary: #FBF8F3;
@@ -27,6 +27,7 @@
             background-color: var(--bg-primary);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Header */
@@ -44,7 +45,7 @@
 
         .logo span {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 600;
             letter-spacing: 1px;
             background: linear-gradient(135deg, #bf953f 0%, #fc6 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
@@ -68,20 +69,20 @@
             transition: color 0.3s;
         }
 
-        .nav-desktop a:hover {
+        .nav-desktop a:hover, .nav-desktop a.active {
             color: var(--accent-terracotta);
         }
 
         .btn-whatsapp-topo {
             background-color: #2C241E;
             color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
             text-decoration: none;
             font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: background 0.3s;
         }
 
@@ -89,50 +90,122 @@
             background-color: var(--accent-terracotta);
         }
 
-        /* Hero com Imagem de Fundo Profissional (Estilo Referência) */
+        /* Hero Section Exata */
         .hero-section {
             position: relative;
-            background: linear-gradient(rgba(28, 22, 18, 0.65), rgba(28, 22, 18, 0.65)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(20, 15, 12, 0.7), rgba(20, 15, 12, 0.7)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--white);
-            padding: 7rem 5% 6rem 5%;
+            padding: 5rem 5%;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
         }
 
-        .hero-content {
-            max-width: 600px;
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 2rem;
         }
 
-        .hero-section h1 {
+        .hero-content h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.2rem;
-            margin-bottom: 1.2rem;
+            font-size: 3.5rem;
+            margin: 0.5rem 0 1.2rem 0;
             line-height: 1.1;
             font-weight: 600;
         }
 
-        .hero-section p {
+        .hero-content p {
             font-size: 1.05rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.5;
+            opacity: 0.95;
+            max-width: 500px;
         }
 
-        .btn-hero {
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-hero {
+            background-color: #C5A059;
+            color: #2C241E;
+            padding: 0.9rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background-color: #F5EDE3;
-            color: #2C241E;
-            padding: 0.8rem 1.6rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
             transition: all 0.3s;
         }
 
-        .btn-hero:hover {
-            background-color: var(--white);
+        .btn-primary-hero:hover {
+            background-color: #d4b06a;
             transform: translateY(-2px);
+        }
+
+        .btn-secondary-hero {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 0.9rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary-hero:hover {
+            border-color: var(--white);
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        .hero-foto-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .hero-foto-container img {
+            width: 100%;
+            max-width: 440px;
+            height: 400px;
+            object-fit: cover;
+            border-top-left-radius: 120px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .hero-quote {
+            margin-top: 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            text-align: right;
+            max-width: 400px;
+            opacity: 0.9;
+        }
+
+        .hero-quote-autor {
+            font-style: normal;
+            font-size: 0.9rem;
+            margin-top: 0.3px;
+            opacity: 0.8;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         /* Seções Gerais */
@@ -141,7 +214,7 @@
         }
 
         .content-wrapper {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -163,112 +236,244 @@
             color: var(--text-main);
         }
 
-        /* Bloco Sobre Mim */
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 3rem;
-            align-items: center;
+        /* Sobre Mim Exato */
+        .sobre-card-principal {
             background: var(--white);
             padding: 3rem;
             border-radius: 12px;
+            display: grid;
+            grid-template-columns: 350px 1fr auto;
+            gap: 3rem;
+            align-items: center;
             border: 1px solid rgba(44, 36, 30, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
 
-        .sobre-foto {
+        .sobre-foto-perfil {
             width: 100%;
             height: 380px;
             object-fit: cover;
             border-radius: 8px;
         }
 
-        /* Áreas de Atuação */
-        .atuacao-container {
-            background-color: var(--bg-secondary);
-            text-align: center;
+        .sobre-topicos {
+            border-left: 1px solid rgba(44, 36, 30, 0.1);
+            padding-left: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .topico-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .topico-item span {
+            font-size: 1.3rem;
+        }
+
+        .topico-item p {
+            font-size: 0.9rem;
+            color: #554840;
+            font-weight: 500;
+        }
+
+        /* Como a Psicanálise Pode Ajudar */
+        .atuacao-section {
+            background-color: #2C241E;
+            color: var(--white);
+            padding: 4rem 5%;
+        }
+
+        .atuacao-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .atuacao-header h2 {
+            color: var(--white);
+            margin: 0;
         }
 
         .atuacao-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 1rem;
-            margin-top: 2.5rem;
+            gap: 1.5rem;
         }
 
-        .atuacao-item {
-            background: var(--white);
-            padding: 1.5rem 1rem;
+        .atuacao-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem 1.5rem;
             border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-main);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        /* Processo Passos */
+        .atuacao-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .atuacao-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        /* Como Funciona */
         .processo-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            margin-top: 2.5rem;
+            margin-top: 3rem;
         }
 
         .processo-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             border-radius: 8px;
-            position: relative;
             border: 1px solid rgba(44, 36, 30, 0.05);
+            position: relative;
         }
 
-        .processo-numero {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+        .processo-num {
+            width: 40px;
+            height: 40px;
+            background-color: #F5EDE3;
             color: var(--accent-terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Seção Atendimento + Instagram */
+        .atendimento-insta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .bloco-atendimento-foto {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(44, 36, 30, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bloco-atendimento-foto img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .bloco-atendimento-conteudo {
+            padding: 2.5rem;
+        }
+
+        .atendimento-lista {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+            list-style: none;
+        }
+
+        .atendimento-lista li {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #554840;
+        }
+
+        .bloco-instagram {
+            background: #241D18;
+            color: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insta-conteudo-box {
+            max-width: 320px;
+        }
+
+        .btn-insta {
+            display: inline-block;
+            background-color: #F5EDE3;
+            color: #2C241E;
+            padding: 0.8rem 1.6rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            transition: background 0.3s;
+        }
+
+        .btn-insta:hover {
+            background-color: var(--white);
         }
 
         /* FAQ */
-        .faq-container {
-            max-width: 800px;
-            margin: 2rem auto 0 auto;
+        .faq-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
         }
 
         .faq-item {
             background: var(--white);
             padding: 1.2rem 1.5rem;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-bottom: 0.8rem;
             border: 1px solid rgba(44, 36, 30, 0.08);
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 500;
+            cursor: pointer;
         }
 
-        /* Banner Instagram */
-        .insta-banner {
-            background: #241D18;
+        /* Banner Final WhatsApp */
+        .banner-final {
+            position: relative;
+            background: linear-gradient(rgba(20, 15, 12, 0.75), rgba(20, 15, 12, 0.75)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: var(--white);
-            border-radius: 12px;
-            padding: 3rem;
-            display: grid;
-            grid-template-columns: 1fr;
             text-align: center;
-            align-items: center;
-            overflow: hidden;
+            padding: 6rem 5%;
         }
 
         /* Rodapé */
         footer {
             background-color: #1a1512;
             color: #A3968C;
-            padding: 4rem 5% 2rem 5%;
+            padding: 3rem 5%;
         }
 
-        .footer-grid {
-            max-width: 1100px;
+        .footer-grid-final {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -279,23 +484,94 @@
             gap: 1.5rem;
         }
 
-        .footer-links-sociais {
+        .footer-sociais-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        .footer-links-sociais a {
+        .footer-sociais-links a {
             color: #E2DBD4;
             text-decoration: none;
             font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
-        /* Responsividade Básica */
-        @media(max-width: 900px) {
-            .sobre-grid { grid-template-columns: 1fr; text-align: center; }
-            .atuacao-grid { grid-template-columns: 1fr 1fr; }
-            .processo-grid { grid-template-columns: 1fr; }
-            .nav-desktop { display: none; }
+        .footer-sociais-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* ================= RESPONSIVO MOBILE OTIMIZADO ================= */
+        @media(max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin: 0 auto 2rem auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-foto-container {
+                align-items: center;
+                margin-top: 2rem;
+            }
+            .hero-quote {
+                text-align: center;
+            }
+            .sobre-card-principal {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2rem;
+            }
+            .sobre-foto-perfil {
+                max-width: 300px;
+                margin: 0 auto;
+                height: 320px;
+            }
+            .sobre-topicos {
+                border-left: none;
+                border-top: 1px solid rgba(44, 36, 30, 0.1);
+                padding-left: 0;
+                padding-top: 2rem;
+            }
+            .topico-item {
+                justify-content: center;
+                text-align: left;
+            }
+            .atuacao-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .processo-grid {
+                grid-template-columns: 1fr;
+            }
+            .atendimento-insta-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .nav-desktop {
+                display: none; /* Esconde menu tradicional no mobile para evitar poluição */
+            }
+        }
+
+        @media(max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+            .atuacao-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid-final {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-sociais-links {
+                justify-content: center;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -307,34 +583,49 @@
             <span>Espaço Terapêutico Restauração</span>
         </div>
         <ul class="nav-desktop">
-            <li><a href="#inicio">Início</a></li>
+            <li><a href="#inicio" class="active">Início</a></li>
             <li><a href="#sobre">Sobre mim</a></li>
+            <li><a href="#processo">Processo</a></li>
             <li><a href="#atendimento">Atendimento</a></li>
             <li><a href="#faq">Perguntas frequentes</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#instagram">Instagram</a></li>
         </ul>
         <a href="https://wa.me/556697241646" target="_blank" class="btn-whatsapp-topo">
             💬 Falar no WhatsApp
         </a>
     </header>
 
-    <!-- Bloco 1: HERO com Imagem de Consultório Integrada -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero-section">
-        <div class="hero-content">
-            <span class="badge-emocional" style="color: #F5EDE3;">PSICANÁLISE</span>
-            <h1>Um espaço para você se escutar.</h1>
-            <p>Aqui, você encontra um ambiente acolhedor, seguro e sem julgamentos, para falar sobre o que sente, pensa e vive.</p>
-            <a href="https://wa.me/556697241646" target="_blank" class="btn-hero">
-                💬 Agendar pelo WhatsApp
-            </a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge-emocional" style="color: #F5EDE3; border-color: #F5EDE3;">PSICANÁLISE</span>
+                <h1>Um espaço para você se escutar.</h1>
+                <p>Aqui, você encontra um ambiente acolhedor, seguro e sem julgamentos, para falar sobre o que sente, pensa e vive.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/556697241646" target="_blank" class="btn-primary-hero">
+                        💬 Agendar pelo WhatsApp
+                    </a>
+                    <a href="#sobre" class="btn-secondary-hero">
+                        Conhecer mais →
+                    </a>
+                </div>
+            </div>
+            <div class="hero-foto-container">
+                <img src="perfil.png" alt="Iranir Moraes">
+                <div class="hero-quote">
+                    “Cada história importa. Aqui, você é ouvido de verdade.”
+                    <div class="hero-quote-autor">Iranir Moraes — Psicanalista Clínica</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Bloco 2: SOBRE MIM -->
+    <!-- Sobre Mim -->
     <section id="sobre">
         <div class="content-wrapper">
-            <div class="sobre-grid">
-                <img src="perfil.png" alt="Iranir Moraes" class="sobre-foto">
+            <div class="sobre-card-principal">
+                <img src="perfil.png" alt="Iranir Moraes" class="sobre-foto-perfil">
                 <div>
                     <span class="badge-emocional">SOBRE MIM</span>
                     <h2>Iranir Moraes</h2>
@@ -347,126 +638,164 @@
                     </p>
                     <a href="https://wa.me/556697241646" target="_blank" style="color: var(--accent-terracotta); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Saiba mais sobre mim →</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloco 3: ÁREAS DE ATUAÇÃO -->
-    <section class="atuacao-container">
-        <div class="content-wrapper">
-            <span class="badge-emocional">COMO A PSICANÁLISE PODE AJUDAR</span>
-            <h2>Questões que podemos trabalhar juntos.</h2>
-            <div class="atuacao-grid">
-                <div class="atuacao-item">🧠 Ansiedade</div>
-                <div class="atuacao-item">❤️ Autoestima</div>
-                <div class="atuacao-item">👥 Relacionamentos</div>
-                <div class="atuacao-item">🌱 Autoconhecimento</div>
-                <div class="atuacao-item">🪷 Conflitos emocionais</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloco 4: COMO FUNCIONA (PASSOS) -->
-    <section style="background-color: var(--bg-primary);">
-        <div class="content-wrapper">
-            <span class="badge-emocional">COMO FUNCIONA</span>
-            <h2>Um processo simples e acolhedor.</h2>
-            <p style="color: #554840; max-width: 600px;">Cada pessoa tem um ritmo. O atendimento é construído de forma única, respeitando o seu momento e suas necessidades.</p>
-            
-            <div class="processo-grid">
-                <div class="processo-card">
-                    <div class="processo-numero">1</div>
-                    <h4 style="margin-bottom: 0.5rem;">Primeiro contato</h4>
-                    <p style="font-size: 0.9rem; color: #554840;">Você pode me chamar pelo WhatsApp ou Instagram para fazer um primeiro contato.</p>
-                </div>
-                <div class="processo-card">
-                    <div class="processo-numero">2</div>
-                    <h4 style="margin-bottom: 0.5rem;">Primeira conversa</h4>
-                    <p style="font-size: 0.9rem; color: #554840;">É um momento para você falar sobre o que te trouxe até aqui e tirar suas dúvidas.</p>
-                </div>
-                <div class="processo-card">
-                    <div class="processo-numero">3</div>
-                    <h4 style="margin-bottom: 0.5rem;">Início do processo</h4>
-                    <p style="font-size: 0.9rem; color: #554840;">Combinamos a frequência das sessões e começamos juntos essa jornada.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloco 5: DETALHES DO ATENDIMENTO -->
-    <section id="atendimento" style="background-color: var(--bg-secondary);">
-        <div class="content-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-            <div>
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Consultório" style="width: 100%; border-radius: 8px; height: 320px; object-fit: cover;">
-            </div>
-            <div>
-                <span class="badge-emocional">ATENDIMENTO</span>
-                <h2>Como funciona?</h2>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
-                    <li style="display: flex; gap: 10px; align-items: center;">💻 <strong>Online e presencial</strong> <span style="font-size: 0.85rem; color: #776558;">(consulte a disponibilidade)</span></li>
-                    <li style="display: flex; gap: 10px; align-items: center;">⏱️ <strong>Sessões de 50 minutos</strong> (em média)</li>
-                    <li style="display: flex; gap: 10px; align-items: center;">📅 <strong>Frequência semanal</strong> ou quinzenal</li>
-                    <li style="display: flex; gap: 10px; align-items: center;">👥 <strong>Adultos, adolescentes</strong> e idosos</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloco 6: FAQ e INSTAGRAM -->
-    <section id="faq">
-        <div class="content-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
-            <div>
-                <span class="badge-emocional">PERGUNTAS FREQUENTES</span>
-                <h2>Tire suas dúvidas.</h2>
-                <div class="faq-container" style="margin-top: 1.5rem;">
-                    <div class="faq-item"><span>Como funciona a primeira sessão?</span> <span>+</span></div>
-                    <div class="faq-item"><span>Quanto tempo dura cada sessão?</span> <span>+</span></div>
-                    <div class="faq-item"><span>É possível fazer online?</span> <span>+</span></div>
-                    <div class="faq-item"><span>Como agendar?</span> <span>+</span></div>
-                </div>
-            </div>
-            
-            <div>
-                <div class="insta-banner">
-                    <div>
-                        <span class="badge-emocional" style="color: #c5a059;">ACOMPANHE MEU TRABALHO</span>
-                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 0.8rem;">Mais reflexões, conteúdos e novidades no Instagram.</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: #d0c5bc;">@psicanalistairani</p>
-                        <a href="https://www.instagram.com/psicanalistairani" target="_blank" class="btn-hero" style="background-color: var(--white); display: inline-block;">Conhecer Instagram</a>
+                <div class="sobre-topicos">
+                    <div class="topico-item">
+                        <span>📍</span>
+                        <p>Formação em Psicologia e especialização em Psicanálise</p>
+                    </div>
+                    <div class="topico-item"><span>🤍</span>
+                        <p>Atendimento ético, humano e acolhedor</p>
+                    </div>
+                    <div class="topico-item">
+                        <span>🛡️</span>
+                        <p>Respeito à sua história e ao seu tempo</p>
+                    </div>
+                    <div class="topico-item">
+                        <span>🔒</span>
+                        <p>Sigilo e confidencialidade</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bloco 7: CHAMADA FINAL -->
-    <section style="background: linear-gradient(rgba(28, 22, 18, 0.75), rgba(28, 22, 18, 0.75)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; color: var(--white); text-align: center;">
+    <!-- Como a Psicanálise Pode Ajudar -->
+    <section class="atuacao-section">
+        <div class="content-wrapper">
+            <div class="atuacao-header">
+                <div>
+                    <span class="badge-emocional" style="color: #c5a059; border-color: #c5a059;">COMO A PSICANÁLISE PODE AJUDAR</span>
+                    <h2>Questões que podemos<br>trabalhar juntos.</h2>
+                </div>
+            </div>
+            <div class="atuacao-grid">
+                <div class="atuacao-card">
+                    <span style="font-size: 1.8rem;">🧠</span>
+                    <h4>Ansiedade</h4>
+                </div>
+                <div class="atuacao-card">
+                    <span style="font-size: 1.8rem;">❤️</span>
+                    <h4>Autoestima</h4>
+                </div>
+                <div class="atuacao-card">
+                    <span style="font-size: 1.8rem;">👥</span>
+                    <h4>Relacionamentos</h4>
+                </div>
+                <div class="atuacao-card">
+                    <span style="font-size: 1.8rem;">🌱</span>
+                    <h4>Autoconhecimento</h4>
+                </div>
+                <div class="atuacao-card">
+                    <span style="font-size: 1.8rem;">🪷</span>
+                    <h4>Conflitos emocionais</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="processo">
+        <div class="content-wrapper">
+            <span class="badge-emocional">COMO FUNCIONA</span>
+            <h2>Um processo simples<br>e acolhedor.</h2>
+            <p style="color: #554840; max-width: 600px;">Cada pessoa tem um ritmo. O atendimento é construído de forma única, respeitando o seu momento e suas necessidades.</p>
+            
+            <div class="processo-grid">
+                <div class="processo-card">
+                    <div class="processo-num">1</div>
+                    <h4 style="margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">Primeiro contato</h4>
+                    <p style="font-size: 0.9rem; color: #554840;">Você pode me chamar pelo WhatsApp ou Instagram para fazer um primeiro contato.</p>
+                </div>
+                <div class="processo-card">
+                    <div class="processo-num">2</div>
+                    <h4 style="margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">Primeira conversa</h4>
+                    <p style="font-size: 0.9rem; color: #554840;">É um momento para você falar sobre o que te trouxe até aqui e tirar suas dúvidas.</p>
+                </div>
+                <div class="processo-card">
+                    <div class="processo-num">3</div>
+                    <h4 style="margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;">Início do processo</h4>
+                    <p style="font-size: 0.9rem; color: #554840;">Combinamos a frequência das sessões e começamos juntos essa jornada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atendimento & Instagram -->
+    <section id="atendimento" style="background-color: var(--bg-secondary);">
+        <div class="content-wrapper">
+            <div class="atendimento-insta-grid">
+                <!-- Bloco Atendimento -->
+                <div class="bloco-atendimento-foto">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80" alt="Consultório">
+                    <div class="bloco-atendimento-conteudo">
+                        <span class="badge-emocional">ATENDIMENTO</span>
+                        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Como funciona?</h2>
+                        <ul class="atendimento-lista">
+                            <li>💻 <strong>Online e presencial</strong></li>
+                            <li>⏱️ <strong>Sessões de 50 min</strong></li>
+                            <li>📅 <strong>Frequência semanal</strong></li>
+                            <li>👥 <strong>Adultos e adolescentes</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bloco Instagram -->
+                <div id="instagram" class="bloco-instagram">
+                    <div class="insta-conteudo-box">
+                        <span class="badge-emocional" style="color: #c5a059;">ACOMPANHE MEU TRABALHO</span>
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 0.8rem; line-height: 1.2;">Mais reflexões, conteúdos e novidades no Instagram.</h3>
+                        <p style="font-size: 0.95rem; opacity: 0.85;">@iranir.moraes</p>
+                    </div>
+                    <a href="https://www.instagram.com/psicanalistairani" target="_blank" class="btn-insta">Conhecer Instagram →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="content-wrapper">
+            <div class="faq-grid-layout">
+                <div>
+                    <span class="badge-emocional">PERGUNTAS FREQUENTES</span>
+                    <h2>Tire suas dúvidas.</h2>
+                    <p style="color: #554840; margin-top: 1rem; font-size: 0.95rem;">Encontre respostas rápidas para as principais dúvidas sobre o início do acompanhamento analítico.</p>
+                </div>
+                <div>
+                    <div class="faq-item"><span>Como funciona a primeira sessão?</span> <span>+</span></div>
+                    <div class="faq-item"><span>Quanto tempo dura cada sessão?</span> <span>+</span></div>
+                    <div class="faq-item"><span>É possível fazer online?</span> <span>+</span></div>
+                    <div class="faq-item"><span>Como agendar?</span> <span>+</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Final -->
+    <section class="banner-final">
         <div class="content-wrapper">
             <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; margin-bottom: 0.5rem; color: var(--white);">Vamos conversar?</h2>
-            <p style="margin-bottom: 2rem; opacity: 0.9;">Seu bem-estar emocional importa. Estou aqui para te ouvir.</p>
-            <a href="https://wa.me/556697241646" target="_blank" class="btn-hero" style="background-color: var(--white); color: #2C241E;">
-                💬 Agendar pelo WhatsApp
+            <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.05rem;">Seu bem-estar emocional importa. Estou aqui para te ouvir.</p>
+            <a href="https://wa.me/556697241646" target="_blank" class="btn-primary-hero">
+                💬 Agendar pelo WhatsApp →
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <div class="footer-grid">
+        <div class="footer-grid-final">
             <div>
-                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); display: block; margin-bottom: 4px;">Iranir Moraes</span>
-                <span style="font-size: 0.85rem; color: #a3968c;">Psicanalista Clínica</span>
+                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); display: block; margin-bottom: 2px;">Espaço Terapêutico Restauração</span>
+                <span style="font-size: 0.85rem; color: #a3968c;">Iranir Moraes — Psicanalista Clínica</span>
             </div>
-            <div style="font-size: 0.85rem;">
-                Atendimento presencial e/ou online
-            </div>
-            <div class="footer-links-sociais">
+            <div class="footer-sociais-links">
                 <a href="https://wa.me/556697241646" target="_blank">WhatsApp</a>
                 <a href="https://www.instagram.com/psicanalistairani" target="_blank">Instagram</a>
                 <a href="mailto:contato@espacorestauration.com">E-mail</a>
             </div>
-            <div style="font-size: 0.8rem; color: #776558; width: 100%; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; text-align: center;">
-                © 2026 Iranir Moraes. Todos os direitos reservados.
+            <div style="font-size: 0.8rem; color: #82746a; width: 100%; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 1rem; text-align: center;">
+                © 2026 Espaço Terapêutico Restauração. Todos os direitos reservados.
             </div>
         </div>
     </footer>
